@@ -1,0 +1,238 @@
+!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> tienda de compus  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url(https://images-na.ssl-images-amazon.com/images/I/71Pk+MKENwL._AC_UL600_SR600,600_.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 150px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cosméticos mia emprendedora</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://static.sweetcare.com/img/prd/488/v-638531891176616795/loreal-paris-021276ol-6.webp" alt="Labial paris">
+		<h2>Hermosos Labiales</h2>
+		 <p> color Riche </p>
+        <p><strong>Q.144.99</strong></p>
+        <p>Dale un toque a tus labios</p>
+       <button class="boton-compra" <img onclick="mostrarPopup('un hermoso labial')">Comprar</button>
+	   
+        <img src="https://es.lorealparisusa.com/-/media/project/loreal/brand-sites/oap/americas/us/beauty-magazine/categories/content-push/makeup/lip_makeup_80.jpg" alt="Labial paris">
+		<h2>Hermosos Labiales</h2>
+		<p> color Dorado elegante </p>
+        <p><strong>Q.185.50</strong></p>
+        <p>Tus Labios con un toque especial</p>
+       <button class="boton-compra" <img onclick="mostrarPopup('un hermoso labial')">Comprar</button>
+	   
+	   <img src="https://m.media-amazon.com/images/I/71hhG5SonYL._UF350,350_QL80_.jpg" alt="Labial paris">
+		<h2>Hermosos Labiales de doble punta </h2>
+		<p>Terciopelo mate de larga duració</p>
+        <p><strong>Q.165.00</strong></p>
+        <p>luce radiante en cada sonrisa </p>
+       <button class="boton-compra" <img onclick="mostrarPopup('un hermoso labial')">Comprar</button>
+	</div>
+	
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/81TuV9GzEaL._UF350,350_QL80_.jpg" alt="Sombra glitter">
+        <h2>Hermosas Sombras </h2>
+		<p> con Glittr Brilla en cada parpadeo </p>
+        <p><strong>Q.285.00</strong></p>
+        <p>Dale un brillo a tus ojos y resalta una mirada encantadora</p>
+        <button class="boton-compra" onclick="mostrarPopup('una hermosa sombra')">Comprar</button>
+		
+		<img src="https://trends.lbel.com/co/wp-content/uploads/sites/5/2022/12/bases.jpg" alt="bases">
+        <h2>Hermosas bases de L´BEL</h2>
+		<p> Usar según mi tipo de piel</p>
+        <p><strong>Q.190.00</strong></p>
+        <p>Dale un toque especial a tu piel. Recuerda que una piel hermosa requiere compromiso no un milagro</p>
+        <button class="boton-compra" onclick="mostrarPopup('una base perfecta para ti')">Comprar</button>
+		
+		<img src="https://m.media-amazon.com/images/I/61KJG9iYDCL._UF1000,1000_QL80_.jpg" alt="Delineadores">
+        <h2>delineadores de L´BEL</h2>
+		<p>delineado perfecto</p>
+        <p><strong>Q.155.00</strong></p>
+        <p>Un delineado es un arte y cada trazo es una pincelada de confianza </p>
+        <button class="boton-compra" onclick="mostrarPopup('el delineado perfecto')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://img.freepik.com/premium-photo/bottle-perfume-with-number-3-front_1191871-44749.jpg" alt="fragancia unica">
+        <h2>perfumes con alta duración y proyección</h2>
+		<p>Una aroma que te transporta a lugares magicos</p>
+		<p><strong>Q.450.00</strong></p>
+        <p>Una fragancia perfecta</p>
+        <button class="boton-compra" onclick="mostrarPopup('La fragancia de tus sueños')">Comprar</button>
+		
+		<img src="https://i.ebayimg.com/images/g/Se4AAOSw5U9dK43h/s-l400.jpg" alt="pinta uñas">
+        <h2>Hermosas pinta uñas</h2>
+		<p>L'Oréal Paris Colour Nail Polishes Choose Colors BUY 3 FOR THE PRICE OF 2! e5 | eBay</p>
+		<p><strong>Q.50.00</strong></p>
+        <p>El toque perfecto para tus uñas</p>
+        <button class="boton-compra" onclick="mostrarPopup('una Hermosa pinta Uña')">Comprar</button>
+		
+		<img src="https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/792x1068/prd-cl/product-medias/MK1LLAUZ0X/e3077610-e408-4687-b97a-593c723356e6/1688639168606-MK1LLAUZ0X-1-2.png" alt="alizado">
+        <h2>El alizado perfecto para ti</h2>
+		<p>Alisado Brasil Y Belleza New Releases</p>
+		<p><strong>Q.499.99</strong></p>
+        <p>Luce un cabello perfecto y sin frizz</p>
+        <button class="boton-compra" onclick="mostrarPopup('un alizador para un cabello liso y radiante')">Comprar</button>
+		
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50212345678" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:ventas@domotronic.com">📧 Correo</a>
+    <a href="tel:+50212345678">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Bienvenido, compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". vuelve pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
